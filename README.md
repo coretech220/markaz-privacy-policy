@@ -14,7 +14,7 @@ remote fonts, forms or JavaScript. Both languages remain readable without script
 execution. Policies describe the current Android functionality; a future iOS
 implementation requires its own functionality and SDK review before release.
 
-Effective date: 10 November 2026. Privacy contact:
+Effective date: 17 November 2026. Privacy contact:
 info@sayyid-shouhadaa-center.com.
 
 To host through GitHub Pages, select **Deploy from a branch**, branch **main**,
@@ -24,3 +24,4 @@ https://coretech220.github.io/markaz-privacy-policy/
 Repository preparation alone does not establish that the site is published.
 Verify the actual HTTPS pages after deployment before using them in the app or
 store listing.
+
