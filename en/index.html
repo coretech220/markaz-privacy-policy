@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Privacy Policy for Markaz — Sayyid Shouhadaa Center. Information about local app data, reminders, the widget, Firebase notifications, YouTube, Pinterest photos and your choices.">
+  <meta name="description" content="Privacy Policy for Markaz — Sayyid Shouhadaa Center. Information about Android and iOS app data, local reminders and widgets, Firebase notifications, YouTube, Pinterest photos and your choices.">
   <meta name="theme-color" content="#06283f">
   <title>Privacy Policy | Markaz — Sayyid Shouhadaa Center</title>
   <link rel="icon" type="image/png" href="../assets/icon.png">
@@ -43,14 +43,14 @@
   <main class="policy" id="policy">
     <p class="eyebrow">MARKAZ · PRIVACY</p>
     <h1>Privacy Policy</h1>
-    <p class="meta">Effective date: <time datetime="2026-11-17">17 November 2026</time></p>
-    <div class="summary"><p>Markaz can read its bundled books and perform text and semantic search on your device. Some features use online services, including shared calendar and lecture updates, Firebase notifications, YouTube and public Pinterest photos. Scheduled occasion reminders and the home-screen widget use local app data. This policy explains the information involved in each case and the controls available to you.</p></div>
+    <p class="meta">Effective date: <time datetime="2026-11-18">18 November 2026</time></p>
+    <div class="summary"><p>Markaz can read its bundled books and perform text and semantic search on your device. Online calendar and lecture updates, YouTube thumbnails and public Pinterest photos involve requests to external services. Android also uses Firebase announcement delivery. Local occasion reminders and home-screen widgets use local app data; the platform differences below explain their controls and limitations.</p></div>
 
     <section id="scope">
       <h2>1. About this policy</h2>
-      <p>This policy applies to the current Android application <strong>Markaz — Sayyid Shouhadaa Center</strong> (<span lang="ar" dir="rtl">مركز سيد الشهداء (ع)</span>), package <span dir="ltr">com.sayyidshouhada.center</span>, and this privacy-policy website. “We” and “our” refer to the operator of the Markaz application, reachable through the contact address below.</p>
+      <p>This policy applies to the Android and iOS applications <strong>Markaz — Sayyid Shouhadaa Center</strong> (<span lang="ar" dir="rtl">مركز سيد الشهداء (ع)</span>), package/bundle identifier <span dir="ltr">com.sayyidshouhada.center</span>, and this privacy-policy website. “We” and “our” refer to the operator of the Markaz application, reachable through the contact address below.</p>
       <p>The app does not require a reader account or a sign-in to use its books and devotional features. The separate private administration service is for authorised administrators; it is not a reader account system.</p>
-      <p class="scope">This policy describes the Android functionality available at the effective date. Any future iOS version will need to be reviewed against its actual permissions, SDKs and services before publication.</p>
+      <p class="scope">Android and iOS practices are distinguished below. The iOS widget description applies to version 1.76; iOS 1.75 did not include this Home Screen widget. The iOS notification description concerns the configuration without remote Firebase announcement delivery described below.</p>
     </section>
 
     <section id="local">
@@ -65,9 +65,12 @@
         <li>Temporary copies of occasion-gallery images, subject to the separate cache limits explained below.</li>
       </ul>
       <p>The app's text search and semantic or “AI” search run locally using bundled indexes and model data. These searches do not send your search terms to a remote AI service.</p>
-      <p>The manually selected city and the device's compass/sensor readings are used locally for day/night timing and Qibla calculations. Markaz does not request GPS or Android location permissions for these features.</p>
-      <h3>Home-screen widget</h3>
+      <p>The manually selected city and the device's compass/sensor readings are used locally for day/night timing and Qibla calculations. Markaz does not request GPS or device-location permissions on Android or iOS for these features.</p>
+      <h3>Android home-screen widget</h3>
       <p>If you add the widget, it reads the app's local calendar, selected-city settings and the occasions selected for the widget to display dates and occasion text on your home screen. These values are not uploaded as a reader profile to provide the widget. Calendar updates received by the app can also update its locally stored widget data.</p>
+      <h3>iOS Home Screen widget — version 1.76</h3>
+      <p>The app shares a validated local calendar snapshot with its own WidgetKit extension through an App Group, a shared storage area on your device. The snapshot includes the selected region/country, time zone, calendar declarations and manual Hijri-day adjustment. The widget reads the bundled occasion list and calculates date and occasion entries locally. This sharing does not upload your selected settings, reading activity or a reader profile to a server; the extension does not independently fetch network content.</p>
+      <p>The app can refresh this local snapshot when your settings or shared calendar data change. The widget prepares future entries and requests updates from iOS. iOS controls when it runs and displays refreshed entries, so a requested update time is not a guarantee of an exact refresh. Removing the widget removes it from your Home Screen; it does not clear the app's stored preferences.</p>
     </section>
 
     <section id="online">
@@ -75,23 +78,31 @@
       <p>The app's online calendar and lecture features request shared Hijri-calendar declarations, the administrator's latest-lecture list, published lecture-library folders and public playlist metadata from the centre's services hosted on Google Firebase. Calendar responses are applied locally to calculate the relevant date on your device. Different features can make separate update requests.</p>
       <p>These update requests do not include your selected city, country, search terms, bookmarks or counter history, and do not use an app-reader account. As with an internet connection generally, the hosting provider can receive your IP address and routine technical request information, such as request time and browser/app information, for service operation and security.</p>
       <p>Online media lists can obtain public YouTube playlist and video information through the centre's media service or public feeds. Cached lecture data and local calendar calculations can remain available if an update fails. The occasion-photo gallery has different connectivity requirements, described below.</p>
+      <p>These public calendar and media services are also contacted by iOS even though its remote Firebase notification integration is inactive. Public update requests and thumbnail requests still reach their hosting providers. Retention and use of technical request logs depend on the provider and service configuration; clearing your local reading history does not delete those provider logs.</p>
     </section>
 
     <section id="notifications">
       <h2>4. Notifications</h2>
-      <h3>Announcements delivered over the internet</h3>
+      <h3>Android announcements delivered over the internet</h3>
       <p>The Android notification feature uses <strong>Google Firebase Cloud Messaging (FCM)</strong> and Firebase installation services. Registration and delivery involve app-installation identifiers, notification registration tokens and technical app/device information handled by Google. Markaz uses a shared broadcast topic to deliver announcements; the app does not upload a reader profile or your local reading and counter history with this subscription.</p>
       <p>On Android versions that require a notification permission, the app asks for that permission. On older versions, activation can occur when Android already allows notifications. You can control notification display in Android's app notification settings; the app's notification controls can open those settings or request activation where appropriate.</p>
       <p>Turning off notification permission prevents notification display as controlled by Android. It does not itself delete a Firebase installation or registration token. Received message content, receipt times and read status are stored locally so that you can revisit messages in the notification history.</p>
-      <h3>Locally scheduled occasion reminders</h3>
+      <h3>Android occasion reminders scheduled locally</h3>
       <p>The app also schedules occasion reminders on your device using its occasion list, Hijri-calendar settings and the time zone of your manually selected city. Scheduling these reminders does not require sending that city, your reading activity or a reminder request to Firebase. Their displayed time and delivery depend on Android notification, scheduling and power-management settings. On supported Android versions, special alarm access can be used for more precise timing; you can manage it in Android settings.</p>
+      <h3>iOS notifications and local occasion reminders</h3>
+      <p>The iOS 1.76 configuration described here does not enable remote Firebase announcement delivery. Its optional Firebase Apple notification integration is not configured or initialised, so it does not register for Firebase remote announcements in this configuration. This differs from Android's FCM feature above and does not disable the public online calendar and lecture services.</p>
+      <p>iOS occasion reminders are scheduled locally after you enable them and grant the system notification permission. They use the app's occasion list, selected region/time zone and Hijri-calendar adjustment. No selected-city or reading-history upload is needed to schedule them. The app maintains a rolling schedule of up to 60 pending occasion reminders, with fewer possible when other pending notifications occupy system slots. Opening the app and changes to its settings/calendar allow the schedule to be refreshed; indefinite delivery without reopening the app is not promised.</p>
+      <p>You control iOS notification permission in system settings. iOS scheduling, Focus and notification settings can affect display and delivery. These local reminders do not require Android's special alarm permission.</p>
       <p>The local notification history keeps the latest 30 full notification records and automatically removes older history records as new ones are recorded. This limit concerns the app's local history; it does not define retention by Firebase or another service provider.</p>
     </section>
 
     <section id="youtube">
       <h2>5. YouTube, cookies and external services</h2>
+      <h3>Android embedded video</h3>
       <p>Lecture and media screens use YouTube-hosted thumbnails. Selecting a video loads a YouTube player and related YouTube services. These requests can reveal your IP address, device/browser information and playback interactions to Google/YouTube. YouTube may use cookies or similar technologies and may display advertising under its own policies.</p>
       <p>The app's Android WebView accepts first-party and third-party cookies so that embedded web content can work. This means the app is not entirely cookie-free, even though its local books and searches do not need advertising trackers.</p>
+      <h3>iOS external video playback</h3>
+      <p>iOS lecture and media screens also request YouTube-hosted thumbnails. Selecting a video opens YouTube or your external browser. The app's iOS WebView blocks embedded YouTube players, related player/advertising domains and third-party cookies; it does not load an embedded YouTube player for playback. The separate YouTube app or browser can process playback information, cookies and advertising under its own policies and account settings.</p>
       <p>Links to the centre's website, YouTube and social or messaging services open the selected service or your browser. If you use one of those services, its own terms, privacy policy and account settings apply. Markaz does not receive your password for those services.</p>
       <ul class="external-list">
         <li><a href="https://policies.google.com/privacy" rel="noopener noreferrer">Google Privacy Policy</a></li>
@@ -104,8 +115,12 @@
       <h2>6. Pinterest occasion galleries and saving images</h2>
       <p>When an occasion gallery is shown while the device has an internet connection, the app requests the relevant public album from Pinterest and loads images from Pinterest's image-hosting service. The configured album links are bundled with the app; a catalogue of all album images is not downloaded in advance. Images are loaded as needed for the visible gallery or the image you open.</p>
       <p>These HTTPS requests go to <span dir="ltr">widgets.pinterest.com</span> and <span dir="ltr">i.pinimg.com</span>. Pinterest can receive your IP address, the requested album or image, request time and technical request information. The in-app gallery uses public resources without asking for Pinterest account credentials. It does not send your local reading history, saved reading positions or selected city with those requests. Supported public images can be viewed in the app without a Pinterest login; availability depends on Pinterest. Links opened separately on Pinterest follow that service's own login requirements and privacy practices.</p>
+      <h3>Android image cache and saving</h3>
       <p>Downloaded image copies are kept in the app's private temporary cache, currently configured with a <strong>64 MiB size limit and a seven-day age limit</strong>. Old or excess cached images are removed during cache use and maintenance; images currently in use can be retained until that use ends. Android may clear cached images earlier. The occasion gallery is hidden when the app cannot confirm an internet connection; this cache is not a promise of an offline photo library.</p>
       <p>Saving an image is a separate action you choose. The app retrieves the selected image or uses its cached copy and creates an image file through Android's photo-saving facilities or a system file picker, depending on Android version. It does not need broad access to read your existing photo library. Images you explicitly save outside the app's private cache are not deleted by automatic cache cleanup and can remain after the app is uninstalled; you control their deletion in the destination you chose. If that destination is synchronised to a cloud service, the destination provider's settings and privacy policy also apply.</p>
+      <h3>iOS image cache and Files export</h3>
+      <p>The iOS gallery uses native requests for the configured public Pinterest albums and images without a Pinterest login, stored request cookies or account credentials. Its private image cache is configured with a 48 MiB size limit, a 200-file limit for cached JPEGs and a seven-day age limit. Thumbnail and full-size copies count separately. Old or excess images are removed during cache use and maintenance; copies currently in use can remain until that use ends, and iOS may clear temporary files earlier. Public album feeds are not kept as an offline album library, and the gallery is hidden when connectivity is unavailable.</p>
+      <p>When you choose to save an image on iOS, the app prepares the selected image and opens the system Files export picker. It does not request broad photo-library access or silently publish the image to a social service. The app attempts to remove the temporary export copy when the export flow ends and removes older temporary exports during cleanup. Files you export remain under your control in the chosen destination and are separate from the private gallery cache. If you choose a cloud-synchronised destination, that provider's settings and privacy policy apply.</p>
       <ul class="external-list"><li><a href="https://policy.pinterest.com/en/privacy-policy" rel="noopener noreferrer">Pinterest Privacy Policy</a></li></ul>
     </section>
 
@@ -116,22 +131,30 @@
     </section>
 
     <section id="permissions">
-      <h2>8. Android permissions and device access</h2>
+      <h2>8. Permissions and device access</h2>
+      <h3>Android</h3>
       <p>The application uses internet and network-state access for its online features, vibration for optional feedback, and notification/messaging permissions and wake functionality needed for notification delivery. Android scheduling and restart handling support local reminders and widget updates. On supported versions, the app can use the system's special alarm access for more precise reminder timing. You control notification and special-access permissions through Android settings.</p>
       <p>The app does not request contacts, microphone, camera or device-location permissions, or broad read access to your existing photos or shared files. An image you explicitly choose to save can be written using Android's photo-saving facilities or a system file picker, as described above. Qibla orientation uses device sensors where available, without requesting your GPS position. Selecting a country and city is manual.</p>
+      <h3>iOS</h3>
+      <p>iOS uses network access for the public update, thumbnail and gallery requests described above, system notification permission for local reminders, and device-motion/heading information for Qibla where available. Country and city selection is manual. This iOS build does not request GPS/device-location, contacts, microphone, camera or broad photo-library permissions. Image saving uses the system Files picker. The App Group shares local calendar settings only between the app and its own widget; adding a widget does not grant access to your contacts, messages or existing photos.</p>
     </section>
 
     <section id="analytics">
       <h2>9. Analytics, advertising and payments</h2>
-      <p>The current Markaz application does not integrate a dedicated analytics SDK, Firebase Analytics, a crash-reporting SDK or an advertising SDK. Its Firebase notification integration is distinct from analytics.</p>
+      <p>The current Android application does not integrate a dedicated analytics SDK, Firebase Analytics, a crash-reporting SDK or an advertising SDK. Its Firebase notification integration is distinct from analytics.</p>
+      <p>The iOS build also has no dedicated Firebase Analytics, advertising or crash-reporting SDK. It includes optional Firebase notification libraries, but the Apple notification integration is inactive in the configuration covered here. Online updates, thumbnails, gallery requests, external playback and messages you send still involve the service-provider processing described in this policy.</p>
       <p>Markaz has no in-app purchase or subscription-billing feature. This does not prevent third-party content, such as a YouTube player, from displaying its own advertising or processing information as explained above.</p>
     </section>
 
     <section id="retention">
       <h2>10. Retention, deletion and your choices</h2>
+      <h3>Android local data</h3>
       <p>Local settings and activity such as saved reading positions can remain on your device until you use an available in-app clearing control, clear the app's storage through Android, or uninstall the app. Gallery-image caches and the local notification history have the automatic limits described above. Clearing saved items or counter history affects those records; it does not clear every category of app data. Android app-data clearing is the broader control for private app data, including notification history and preferences. It does not delete images you have explicitly exported to a separate photo or file destination.</p>
+      <h3>iOS local data</h3>
+      <p>Reading settings, saved items, progress and the locally shared widget calendar can remain until you clear the relevant records through an available app control or delete the app. Removing the widget alone does not erase these records. Offloading an iOS app can retain its documents and data. Gallery caches and local notification history have the limits described above. Exported Files are separate: deleting the app or clearing its cache does not delete copies you exported. System backups or a chosen cloud-file destination can retain copies according to your operating-system and destination settings.</p>
+      <h3>Messages, providers and choices</h3>
       <p>Support emails can remain in correspondence records as needed to handle the request and related records. This policy does not promise an automatic deletion period that the current service does not implement. Technical information processed by Google, YouTube, Pinterest, your email provider or GitHub is subject to those providers' retention practices.</p>
-      <p>You can avoid opening online media or external links, manage notifications in Android settings, and contact us about privacy or information you sent directly to us. Where applicable law provides rights to access, correction or deletion, send your request to the address below. Requests concerning data held independently by another service should also be directed to that service.</p>
+      <p>You can avoid opening online media or external links, manage notifications in Android or iOS settings, and contact us about privacy or information you sent directly to us. Where applicable law provides rights to access, correction or deletion, send your request to the address below. Requests concerning data held independently by another service should also be directed to that service.</p>
       <p>No reader account is created by Markaz, so there is no reader-account deletion process or sign-in account to close.</p>
     </section>
 
@@ -144,7 +167,7 @@
     <section id="security">
       <h2>12. Security and service providers</h2>
       <p>The app uses HTTPS for its configured online services and keeps its books and local activity within app storage. It restricts access to the private administration service to authorised administrators. No internet service or device storage can be guaranteed completely secure.</p>
-      <p>Google Firebase provides hosting and messaging used by online app features; Google/YouTube provides video services; Pinterest provides the public occasion-gallery feeds and images; your chosen email provider handles support messages you send; and GitHub hosts this policy website. These providers may process information in countries other than your own according to their services and policies.</p>
+      <p>Google Firebase provides hosting for public online app features and messaging for Android announcements; Google/YouTube provides video services; Pinterest provides the public occasion-gallery feeds and images; your chosen email provider handles support messages you send; and GitHub hosts this policy website. These providers may process information in countries other than your own according to their services and policies.</p>
       <ul class="external-list">
         <li><a href="https://firebase.google.com/support/privacy" rel="noopener noreferrer">Firebase Privacy and Security information</a></li>
         <li><a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" rel="noopener noreferrer">GitHub General Privacy Statement</a></li>
@@ -164,7 +187,7 @@
     <a class="back-top" href="#top">Back to top</a>
   </main>
 </div>
-<footer class="footer"><p>Markaz · Privacy Policy · <a href="../" lang="ar" dir="rtl">النسخة العربية</a></p><p>Last updated <time datetime="2026-11-17">17 November 2026</time></p></footer>
+<footer class="footer"><p>Markaz · Privacy Policy · <a href="../" lang="ar" dir="rtl">النسخة العربية</a></p><p>Last updated <time datetime="2026-11-18">18 November 2026</time></p></footer>
 </body>
 </html>
 

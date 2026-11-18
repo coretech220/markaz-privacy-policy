@@ -11,10 +11,13 @@ Public, bilingual privacy-policy website for Markaz — Sayyid Shouhadaa Center
 
 The site contains no application source code, credentials, analytics scripts,
 remote fonts, forms or JavaScript. Both languages remain readable without script
-execution. Policies describe the current Android functionality; a future iOS
-implementation requires its own functionality and SDK review before release.
+execution. Policies distinguish the Android application from iOS 1.76, including its local
+WidgetKit extension, locally scheduled reminders, external video playback and
+Files exports. The described iOS configuration has remote Firebase announcement
+delivery disabled. Changes to either platform require a fresh review of its
+actual services and permissions.
 
-Effective date: 17 November 2026. Privacy contact:
+Effective date: 18 November 2026. Privacy contact:
 info@sayyid-shouhadaa-center.com.
 
 To host through GitHub Pages, select **Deploy from a branch**, branch **main**,
