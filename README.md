@@ -11,13 +11,15 @@ Public, bilingual privacy-policy website for Markaz — Sayyid Shouhadaa Center
 
 The site contains no application source code, credentials, analytics scripts,
 remote fonts, forms or JavaScript. Both languages remain readable without script
-execution. Policies distinguish the Android application from iOS 1.76, including its local
-WidgetKit extension, locally scheduled reminders, external video playback and
-Files exports. The described iOS configuration has remote Firebase announcement
-delivery disabled. Changes to either platform require a fresh review of its
-actual services and permissions.
+execution. Policies distinguish the Android application from iOS, including its local
+WidgetKit extension introduced in 1.76, locally scheduled reminders, external
+video playback and Files exports. iOS 1.77 supports optional Firebase/APNs
+announcements after notification permission and app consent. The policy retains
+the earlier iOS 1.76 (77) build's inactive remote messaging configuration and
+explains operational service data and withdrawal limitations. Changes to either
+platform require a fresh review of its actual services and permissions.
 
-Effective date: 18 November 2026. Privacy contact:
+Effective date: 19 November 2026. Privacy contact:
 info@sayyid-shouhadaa-center.com.
 
 To host through GitHub Pages, select **Deploy from a branch**, branch **main**,
